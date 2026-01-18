@@ -6,3 +6,5 @@ build/
 .env
 .venv
 .DS_Store
+demand.md
+guide.md
