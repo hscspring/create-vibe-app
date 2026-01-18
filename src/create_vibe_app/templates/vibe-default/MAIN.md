@@ -21,6 +21,8 @@ Welcome to your Vibe Coding project! This structure is designed to help AI agent
 | `code/` | Your source code |
 | `reference/` | Reference implementations |
 
+> **💡 Tip**: You can replace `code/` with your existing project structure (e.g., `src/`, or use the project root directly). Just update the references accordingly.
+
 ## 🔄 Workflow
 
 ```
@@ -36,19 +38,23 @@ User Intent → Phase Router → Agent → Skill Execution → Experience Deposi
 - **implementation-executor**: Writes and modifies code
 - **experience-depositor**: Extracts and records learnings
 
-### Skills
-Pre-defined reusable workflows:
-- `req-create/` - Create new requirements
-- `design-create/` - Create design documents
-- `code-commit/` - Commit with proper messages
-- `code-review/` - Review code for issues
-- `test-create/` - Generate test cases
-- `experience-record/` - Record lessons learned
-- `workspace-setup/` - Initialize dev environment
+### Skills (10)
+| Skill | Purpose |
+|-------|---------|
+| `req-create/` | Create requirements |
+| `design-create/` | Create design documents |
+| `code-commit/` | Git commits with conventions |
+| `code-review/` | Review code for issues |
+| `test-create/` | Generate test cases |
+| `experience-record/` | Record lessons learned |
+| `workspace-setup/` | Initialize dev environment |
+| `skill-creator/` | Create new skills |
+| `frontend-design/` | Premium UI design |
+| `webapp-testing/` | Playwright testing |
 
 ## 📝 Getting Started
 
-1. Start by adding your first requirement:
+1. Add your first requirement:
    ```markdown
    # requirement/INDEX.md
    - [ ] [REQ-001] Your first feature
