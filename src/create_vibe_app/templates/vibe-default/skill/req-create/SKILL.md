@@ -1,66 +1,44 @@
 ---
 name: req-create
-description: Create a new requirement document
+description: Create structured requirement documents from user ideas. Use when capturing new features, tasks, or user stories that need documentation in requirement/INDEX.md.
 ---
 
-# Skill: Create Requirement
+# Create Requirement
 
-## Purpose
-Create a well-structured requirement document from a user idea or request.
-
-## Inputs
-- User description of the feature/task
-- Priority level (optional)
+Create well-structured requirement documents from user ideas.
 
 ## Workflow
 
-1. **Capture** - Get the user's description
-2. **Clarify** - Ask clarifying questions if needed
-3. **Structure** - Format into standard template
+1. **Capture** - Get user's description
+2. **Clarify** - Ask questions if needed
+3. **Structure** - Format into template
 4. **Index** - Add to `requirement/INDEX.md`
-5. **Store** - Save detailed doc to `requirement/in-progress/`
+5. **Store** - Save to `requirement/in-progress/`
 
-## Output Template
+## Template
 
 ```markdown
 # [REQ-XXX] Title
 
 ## Summary
-[One sentence description]
-
-## Background
-[Why this is needed, context]
+[One sentence]
 
 ## User Story
-As a [user type], I want [goal], so that [benefit].
+As a [user], I want [goal], so that [benefit].
 
 ## Acceptance Criteria
 - [ ] Criterion 1
 - [ ] Criterion 2
-- [ ] Criterion 3
 
 ## Priority
 [P0: Critical | P1: High | P2: Medium | P3: Low]
 
-## Estimated Effort
+## Effort
 [S/M/L/XL]
-
-## Dependencies
-- None
-
-## Notes
-[Additional context]
 ```
 
-## Example Usage
-
-**Input:**
-> "我想添加用户登录功能"
-
-**Output:**
-Creates `requirement/in-progress/REQ-001-user-login.md` and updates INDEX.
-
 ## Tips
-- Keep requirements atomic (one feature per requirement)
-- Make acceptance criteria testable
-- Link to related design docs when available
+- Keep requirements atomic (one feature each)
+- Make criteria testable
+- Link to related designs
+

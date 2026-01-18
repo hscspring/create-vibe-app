@@ -1,101 +1,59 @@
 ---
 name: code-review
-description: Review code for issues, bugs, and improvements
+description: Review code for quality, bugs, security, and improvements. Use when self-reviewing before commit, reviewing PRs, or debugging issues.
 ---
 
-# Skill: Code Review
+# Code Review
 
-## Purpose
-Systematically review code for quality, bugs, security issues, and improvements.
+Systematically review code for quality, bugs, and security.
 
-## Inputs
-- Code files or diff to review
-- Context (requirement, design doc)
+## Checklist
 
-## Review Checklist
+| Priority | Check |
+|----------|-------|
+| 🔴 Critical | Security (no secrets, injection) |
+| 🔴 Critical | Correctness (logic, edge cases) |
+| 🟡 Important | Performance (N+1, loops) |
+| 🟡 Important | Error handling |
+| 🟢 Nice-to-have | Readability, DRY, style |
 
-### 🔴 Critical (Must Fix)
-- [ ] **Security** - No hardcoded secrets, SQL injection, XSS
-- [ ] **Correctness** - Logic errors, edge cases
-- [ ] **Data integrity** - Proper validation, error handling
+## Process
 
-### 🟡 Important (Should Fix)
-- [ ] **Performance** - N+1 queries, unnecessary loops
-- [ ] **Error handling** - Graceful failures, proper logging
-- [ ] **Testing** - Adequate test coverage
-
-### 🟢 Suggestions (Nice to Have)
-- [ ] **Readability** - Clear naming, comments
-- [ ] **DRY** - No code duplication
-- [ ] **Style** - Consistent formatting
-
-## Review Process
-
-1. **Understand context** - Read requirement and design
-2. **High-level review** - Architecture and structure
-3. **Line-by-line review** - Detailed code inspection
-4. **Test review** - Check test coverage
-5. **Document findings** - Create review summary
+1. **Context** - Read requirement/design
+2. **High-level** - Architecture check
+3. **Line-by-line** - Detailed inspection
+4. **Tests** - Check coverage
+5. **Document** - Summarize findings
 
 ## Output Format
 
 ```markdown
-## Code Review: [Feature/PR Name]
+## Code Review: [Name]
 
 ### Summary
-[Overall assessment: Approved / Changes Requested / Needs Discussion]
+[Approved / Changes Requested]
 
-### Critical Issues 🔴
-- [ ] Issue 1 (file:line)
-  - Problem: ...
-  - Suggestion: ...
+### Issues
+- 🔴 [file:line] Problem → Suggestion
+- 🟡 [file:line] Problem → Suggestion
 
-### Important Issues 🟡
-- [ ] Issue 1 (file:line)
-  - Problem: ...
-  - Suggestion: ...
-
-### Suggestions 🟢
-- [ ] Suggestion 1 (file:line)
-  - Current: ...
-  - Better: ...
-
-### Positive Notes 👍
-- Good pattern in file.py
-- Clear error handling
-
-### Questions
-- Why was X approach chosen over Y?
+### Good Patterns 👍
+- [What was done well]
 ```
 
-## Common Patterns to Check
+## Common Issues
 
-### Security
 ```python
-# Bad
-password = "hardcoded123"
-query = f"SELECT * FROM users WHERE id = {user_id}"
+# 🔴 Security
+password = "hardcoded"          # Bad
+password = os.environ["PASS"]   # Good
 
-# Good
-password = os.environ.get("PASSWORD")
-query = "SELECT * FROM users WHERE id = %s", (user_id,)
-```
-
-### Error Handling
-```python
-# Bad
-result = risky_operation()
-
-# Good
-try:
-    result = risky_operation()
-except SpecificError as e:
-    logger.error(f"Operation failed: {e}")
-    raise
+# 🔴 SQL Injection
+f"SELECT * WHERE id={id}"       # Bad
+"SELECT * WHERE id=%s", (id,)   # Good
 ```
 
 ## Tips
-- Be constructive, not critical
-- Explain the "why" behind suggestions
+- Be constructive
+- Explain the "why"
 - Acknowledge good patterns
-- Prioritize issues clearly

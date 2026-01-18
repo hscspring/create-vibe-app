@@ -1,35 +1,27 @@
 ---
 name: design-create
-description: Create a design document for a feature or system
+description: Create design documents for features or systems. Use when architecture planning, API design, or technical decisions are needed before implementation.
 ---
 
-# Skill: Create Design Document
+# Create Design Document
 
-## Purpose
-Create a comprehensive design document that guides implementation.
-
-## Inputs
-- Requirement document
-- Existing architecture context (from `wiki/design/`)
+Create comprehensive design documents that guide implementation.
 
 ## Workflow
 
 1. **Analyze** - Understand the requirement
 2. **Research** - Check existing patterns in `wiki/tech/`
-3. **Design** - Create the architecture
-4. **Document** - Write the design doc
-5. **Review** - Get user approval
+3. **Design** - Create architecture
+4. **Document** - Write design doc
+5. **Review** - Get approval
 
-## Output Template
+## Template
 
 ```markdown
 # Design: [Feature Name]
 
 ## Overview
-[What this design covers]
-
-## Requirements Reference
-- [Link to requirement]
+[What this covers]
 
 ## Goals
 - Goal 1
@@ -40,51 +32,28 @@ Create a comprehensive design document that guides implementation.
 
 ## Architecture
 
-### System Context
-[How this fits into the overall system]
-
 ### Components
 | Component | Responsibility |
 |-----------|----------------|
-| ComponentA | Does X |
-| ComponentB | Does Y |
+| A | Does X |
+| B | Does Y |
 
-### Data Flow
-```
-[Diagram or description of data flow]
-```
-
-### API Design
-[If applicable]
-
-#### Endpoint: POST /api/example
+### API Design (if applicable)
+#### POST /api/example
 - Request: `{ "field": "value" }`
 - Response: `{ "result": "value" }`
 
-## Implementation Plan
-1. Step 1
-2. Step 2
-3. Step 3
-
 ## Alternatives Considered
-| Option | Pros | Cons | Decision |
-|--------|------|------|----------|
-| Option A | ... | ... | Selected |
-| Option B | ... | ... | Rejected |
+| Option | Pros | Cons |
+|--------|------|------|
+| A | ... | ... |
 
-## Risks & Mitigations
+## Risks
 | Risk | Mitigation |
 |------|------------|
 | Risk 1 | How to handle |
-
-## Open Questions
-- [ ] Question 1
 ```
 
 ## Storage
 Save to `wiki/design/[feature-name].md`
 
-## Tips
-- Keep designs focused on the "what" and "why"
-- Leave implementation details flexible
-- Get user approval before implementation

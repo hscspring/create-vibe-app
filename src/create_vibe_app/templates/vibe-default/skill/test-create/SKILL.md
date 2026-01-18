@@ -1,126 +1,74 @@
 ---
 name: test-create
-description: Generate test cases for code
+description: Generate test cases for code. Use when writing unit tests, integration tests, or verifying acceptance criteria.
 ---
 
-# Skill: Create Tests
+# Create Tests
 
-## Purpose
-Generate comprehensive test cases for new or existing code.
+Generate comprehensive test cases for code.
 
-## Inputs
-- Code to test
-- Requirements/acceptance criteria
+## Test Categories
 
-## Test Types
+| Category | Examples |
+|----------|----------|
+| ✅ Happy Path | Normal inputs, standard cases |
+| 🔸 Edge Cases | Empty, boundary, min/max |
+| ❌ Error Cases | Invalid inputs, failures |
 
-| Type | Purpose | When to Use |
-|------|---------|-------------|
-| Unit | Test individual functions | Always |
-| Integration | Test component interactions | APIs, DB |
-| E2E | Test full user flows | Critical paths |
+## Python (pytest)
 
-## Workflow
-
-1. **Analyze** - Understand the code's purpose
-2. **Identify** - List testable behaviors
-3. **Design** - Plan test cases
-4. **Write** - Implement tests
-5. **Run** - Verify all pass
-
-## Test Case Categories
-
-### Happy Path ✅
-- Normal expected inputs
-- Standard use cases
-
-### Edge Cases 🔸
-- Empty inputs
-- Boundary values
-- Maximum/minimum values
-
-### Error Cases ❌
-- Invalid inputs
-- Network failures
-- Missing data
-
-## Output Template
-
-### Python (pytest)
 ```python
 import pytest
-from module import function_to_test
 
-class TestFunctionName:
-    """Tests for function_to_test"""
+class TestFunction:
+    def test_valid_input_returns_expected(self):
+        assert function("valid") == "expected"
     
-    # Happy Path
-    def test_normal_input_returns_expected(self):
-        """Given valid input, should return expected result"""
-        result = function_to_test("valid_input")
-        assert result == "expected_output"
-    
-    # Edge Cases
     def test_empty_input_returns_empty(self):
-        """Given empty input, should return empty result"""
-        result = function_to_test("")
-        assert result == ""
+        assert function("") == ""
     
-    # Error Cases
-    def test_invalid_input_raises_error(self):
-        """Given invalid input, should raise ValueError"""
+    def test_invalid_raises_error(self):
         with pytest.raises(ValueError):
-            function_to_test(None)
-
-# Fixtures
-@pytest.fixture
-def sample_data():
-    return {"key": "value"}
+            function(None)
 ```
 
-### JavaScript (Jest)
+## JavaScript (Jest)
+
 ```javascript
-describe('functionName', () => {
-  // Happy Path
-  it('should return expected result for valid input', () => {
-    expect(functionName('valid')).toBe('expected');
+describe('function', () => {
+  it('returns expected for valid input', () => {
+    expect(fn('valid')).toBe('expected');
   });
 
-  // Edge Cases
-  it('should handle empty input', () => {
-    expect(functionName('')).toBe('');
+  it('handles empty input', () => {
+    expect(fn('')).toBe('');
   });
 
-  // Error Cases
-  it('should throw for invalid input', () => {
-    expect(() => functionName(null)).toThrow();
+  it('throws for invalid', () => {
+    expect(() => fn(null)).toThrow();
   });
 });
 ```
 
-## Test Naming Convention
+## Naming Convention
 
 ```
 test_[what]_[condition]_[expected]
 
-Examples:
-- test_login_with_valid_credentials_returns_token
-- test_login_with_wrong_password_raises_auth_error
-- test_get_user_when_not_found_returns_none
+test_login_valid_credentials_returns_token
+test_login_wrong_password_raises_error
 ```
 
 ## Coverage Goals
 
-| Code Type | Target |
-|-----------|--------|
+| Type | Target |
+|------|--------|
 | Business logic | 80%+ |
-| Utility functions | 90%+ |
-| UI components | 60%+ |
-| Infrastructure | 50%+ |
+| Utilities | 90%+ |
+| UI | 60%+ |
 
 ## Tips
 - Test behavior, not implementation
-- One assertion per test (when possible)
-- Use descriptive test names
+- One assertion per test
 - Mock external dependencies
-- Keep tests fast and isolated
+- Keep tests fast

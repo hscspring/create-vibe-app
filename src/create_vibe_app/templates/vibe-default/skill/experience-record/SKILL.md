@@ -1,51 +1,32 @@
 ---
 name: experience-record
-description: Record lessons learned and experiences
+description: Record lessons learned and experiences for future reference. Use after solving bugs, discovering patterns, making decisions, or completing complex features.
 ---
 
-# Skill: Record Experience
+# Record Experience
 
-## Purpose
-Capture valuable lessons learned, solutions to problems, and patterns for future reference.
+Capture valuable lessons for future reference.
 
-## When to Use
-- After solving a tricky bug
-- Discovering a useful pattern
-- Making an important decision
-- Completing a complex feature
+## Categories
 
-## Experience Categories
+| Tag | Use For |
+|-----|---------|
+| `[BUG]` | Bug solutions |
+| `[PATTERN]` | Successful patterns |
+| `[PITFALL]` | Things to avoid |
+| `[DECISION]` | Important choices |
+| `[PERF]` | Optimizations |
 
-| Category | Tag | Description |
-|----------|-----|-------------|
-| Bug | `[BUG]` | Bug and its solution |
-| Pattern | `[PATTERN]` | Successful code pattern |
-| Pitfall | `[PITFALL]` | Things to avoid |
-| Decision | `[DECISION]` | Why a choice was made |
-| Tool | `[TOOL]` | Useful tool/config |
-| Performance | `[PERF]` | Optimization learnings |
-
-## Workflow
-
-1. **Trigger** - Identify something worth recording
-2. **Categorize** - Select the right category
-3. **Document** - Write the experience entry
-4. **Store** - Save to `wiki/experience/`
-5. **Cross-reference** - Link to related docs
-
-## Output Template
+## Template
 
 ```markdown
-# [CATEGORY] Short Title
+# [CATEGORY] Title
 
 ## TL;DR
-[One sentence summary]
-
-## Context
-[When and where this applies]
+[One sentence]
 
 ## Problem
-[What was the issue or challenge]
+[What was the issue]
 
 ## Solution
 [How it was solved]
@@ -59,81 +40,42 @@ Capture valuable lessons learned, solutions to problems, and patterns for future
 ...
 ```
 
-## Why It Works
-[Explanation of why this solution is correct]
-
 ## Prevention
-[How to avoid this issue in the future]
-
-## Related
-- [Link to related experience]
-- [Link to external resource]
+[How to avoid in future]
 
 ## Tags
-#tag1 #tag2 #tag3
+#tag1 #tag2
 ```
 
-## Example Entries
+## Example
 
-### Bug Example
 ```markdown
 # [BUG] Null Pointer in User Query
 
 ## TL;DR
-Always check for null before accessing user properties.
+Check for null before accessing user properties.
 
 ## Problem
-API crashed when querying non-existent user.
+API crashed on non-existent user.
 
 ## Solution
-Added null check and proper error response.
+Added null check and 404 response.
 
 ## Prevention
-- Add unit tests for null cases
-- Use Optional types where available
+- Unit tests for null cases
+- Use Optional types
 ```
 
-### Decision Example
-```markdown
-# [DECISION] JWT over Session for Auth
-
-## TL;DR
-Chose JWT for stateless authentication.
-
-## Context
-Needed auth for microservices architecture.
-
-## Options Considered
-1. Session-based - Requires shared session store
-2. JWT - Stateless, scalable
-
-## Decision
-JWT because:
-- No shared state needed
-- Works across services
-- Easy to scale
-
-## Trade-offs
-- Larger request size
-- Can't invalidate immediately
-```
-
-## Storage Structure
+## Storage
 
 ```
 wiki/experience/
 ├── bugs/
-│   └── null-pointer-user-query.md
 ├── patterns/
-│   └── repository-pattern.md
-├── decisions/
-│   └── jwt-auth-choice.md
-└── INDEX.md  # Quick reference
+└── decisions/
 ```
 
 ## Tips
 - Write while context is fresh
-- Be specific and actionable
 - Include code examples
 - Add searchable tags
-- Link to related experiences
