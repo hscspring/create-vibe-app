@@ -1,0 +1,1 @@
+recursive-include src/create_vibe_app/templates *
