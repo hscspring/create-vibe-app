@@ -1,4 +1,13 @@
+<!--
+AI Instructions:
+1. Read this file first to understand the project structure
+2. Check requirement/INDEX.md for current tasks
+3. Use agents in agent/ and skills in skill/ to complete work
+4. Record learnings in wiki/experience/
+-->
+
 # Vibe Coding Project
+
 
 Welcome to your Vibe Coding project! This structure is designed to help AI agents work more effectively on your codebase.
 

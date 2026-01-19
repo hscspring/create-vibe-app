@@ -58,10 +58,12 @@ def main(project_name: str = typer.Argument(None, help="The name of the project 
 
     init_git(project_path)
 
-    print("\n[bold green]Success! Created project at:[/bold green] " + str(project_path))
-    print("\n[bold]Next steps:[/bold]")
-    print(f"  cd {project_name}")
-    print("  # Review MAIN.md and start Vibe Coding!")
+    print("\n[bold green]✅ Success! Created project at:[/bold green] " + str(project_path))
+    print("\n[bold]📖 Next steps:[/bold]")
+    print(f"   cd {project_name}")
+    print("   code .  # or your preferred IDE")
+    print("\n[bold]💡 In your AI assistant, try:[/bold]")
+    print('   "Read MAIN.md and help me add [your feature]"')
 
 if __name__ == "__main__":
     app()
