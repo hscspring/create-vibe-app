@@ -54,11 +54,3 @@ User Task → Analyze Intent → Detect Complexity → Route → Update Knowledg
                     Medium: Requirement → Design → Implement
                     Complex: Full flow + User confirmation
 ```
-
-## 🤝 Contributing
-
-Issues and PRs welcome!
-
-## 📄 License
-
-Apache 2.0
