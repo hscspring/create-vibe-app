@@ -61,4 +61,4 @@ Issues and PRs welcome!
 
 ## 📄 License
 
-MIT
+Apache 2.0
