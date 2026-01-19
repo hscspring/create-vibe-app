@@ -63,7 +63,8 @@ def main(project_name: str = typer.Argument(None, help="The name of the project 
     print(f"   cd {project_name}")
     print("   code .  # or your preferred IDE")
     print("\n[bold]💡 In your AI assistant, try:[/bold]")
-    print('   "Read MAIN.md and help me add [your feature]"')
+    print('   "Read MAIN.md, then help me build [your idea]"')
 
 if __name__ == "__main__":
     app()
+

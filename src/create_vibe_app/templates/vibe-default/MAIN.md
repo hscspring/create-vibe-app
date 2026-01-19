@@ -1,80 +1,68 @@
 <!--
 AI Instructions:
-1. Read this file first to understand the project structure
-2. Check requirement/INDEX.md for current tasks
-3. Use agents in agent/ and skills in skill/ to complete work
-4. Record learnings in wiki/experience/
+1. Read this file to understand the project structure
+2. For new projects: help user describe their task, then break it down
+3. For existing projects: read code first, deposit knowledge to wiki/
+4. Use agents in agent/ and skills in skill/ to complete work
+5. Record learnings in wiki/experience/
 -->
 
 # Vibe Coding Project
 
-
-Welcome to your Vibe Coding project! This structure is designed to help AI agents work more effectively on your codebase.
+Welcome to your Vibe Coding project! This structure is designed to help AI agents work more effectively.
 
 ## 🚀 Quick Start
 
-1. **Define your requirement** in `requirement/INDEX.md`
-2. **Let AI design** using agents in `agent/`
-3. **Implement** with skills in `skill/`
-4. **Record learnings** in `wiki/`
+### New Project
+Just tell the AI what you want to build:
+> "帮我创建一个用户登录功能"
+
+AI will automatically:
+1. Break down requirements (via requirement-manager)
+2. Create design (via design-manager)
+3. Implement code (via implementation-executor)
+4. Record learnings (via experience-depositor)
+
+### Existing Project
+First, let AI understand your codebase:
+> "先阅读整个项目，把架构和关键信息沉淀到 wiki/"
+
+Then continue with new tasks normally.
 
 ## 📁 Directory Structure
 
 | Directory | Purpose |
 |-----------|---------|
-| `agent/` | Agent role definitions and prompts |
+| `agent/` | Agent role definitions |
 | `skill/` | Reusable workflow skills |
-| `wiki/` | Project knowledge base (context) |
-| `requirement/` | Task and requirement tracking |
-| `mcp/` | External tool configurations |
-| `code/` | Your source code |
+| `wiki/` | Project knowledge base |
+| `requirement/` | Task tracking |
+| `mcp/` | External tool configs |
+| `code/` | Source code |
 | `reference/` | Reference implementations |
 
-> **💡 Tip**: You can replace `code/` with your existing project structure (e.g., `src/`, or use the project root directly). Just update the references accordingly.
+> **💡 Tip**: Replace `code/` with your existing structure (e.g., `src/`) if needed.
 
 ## 🔄 Workflow
 
 ```
-User Intent → Phase Router → Agent → Skill Execution → Experience Deposit
-                                ↓
-                          wiki/ (context loading)
+User Task → Phase Router → Agent → Execute → Record Learnings
+                             ↓
+                       wiki/ (context)
 ```
 
 ### Agents
-- **phase-router**: Routes intent to the correct agent
-- **requirement-manager**: Manages requirement lifecycle
-- **design-manager**: Handles architecture and design
-- **implementation-executor**: Writes and modifies code
-- **experience-depositor**: Extracts and records learnings
+| Agent | Role |
+|-------|------|
+| phase-router | Analyze intent, route to correct agent |
+| requirement-manager | Break down and manage requirements |
+| design-manager | Architecture and design decisions |
+| implementation-executor | Write and modify code |
+| experience-depositor | Extract and record learnings |
 
 ### Skills (10)
-| Skill | Purpose |
-|-------|---------|
-| `req-create/` | Create requirements |
-| `design-create/` | Create design documents |
-| `code-commit/` | Git commits with conventions |
-| `code-review/` | Review code for issues |
-| `test-create/` | Generate test cases |
-| `experience-record/` | Record lessons learned |
-| `workspace-setup/` | Initialize dev environment |
-| `skill-creator/` | Create new skills |
-| `frontend-design/` | Premium UI design |
-| `webapp-testing/` | Playwright testing |
+`req-create` · `design-create` · `code-commit` · `code-review` · `test-create` · `experience-record` · `workspace-setup` · `skill-creator` · `frontend-design` · `webapp-testing`
 
-## 📝 Getting Started
-
-1. Add your first requirement:
-   ```markdown
-   # requirement/INDEX.md
-   - [ ] [REQ-001] Your first feature
-   ```
-
-2. Invoke the requirement manager agent to refine it.
-
-3. Use design-manager to create architecture.
-
-4. Let implementation-executor write the code.
-
-5. Record learnings with experience-depositor.
-
+---
 Happy Vibe Coding! 🎉
+
