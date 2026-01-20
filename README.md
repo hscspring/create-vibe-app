@@ -54,3 +54,7 @@ User Task → Analyze Intent → Detect Complexity → Route → Update Knowledg
                     Medium: Requirement → Design → Implement
                     Complex: Full flow + User confirmation
 ```
+
+## Examples
+
+[hscspring/create-vibe-app-examples](https://github.com/hscspring/create-vibe-app-examples)
