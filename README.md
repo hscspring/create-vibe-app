@@ -2,6 +2,8 @@
 
 Scaffold AI-friendly project structures for **Vibe Coding** – a methodology that helps AI agents work more effectively on your codebase.
 
+An implementation of the ideas presented in [this article](https://yam.gift/2026/01/18/AI/2026-01-18-Upgrade-VibeCoding/).
+
 ## ✨ What is Vibe Coding?
 
 Vibe Coding is a development approach where:
@@ -58,3 +60,4 @@ User Task → Analyze Intent → Detect Complexity → Route → Update Knowledg
 ## Examples
 
 [hscspring/create-vibe-app-examples](https://github.com/hscspring/create-vibe-app-examples)
+
